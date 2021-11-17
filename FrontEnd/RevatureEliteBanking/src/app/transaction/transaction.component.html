@@ -1,1 +1,47 @@
-<p>transaction works!</p>
+
+
+<div>
+  <img src="../../assets/revature-logo.png" alt=""> 
+
+
+
+  <h3  class='text-center'id='accountNum'>ACCOUNT NUMBER: {{this.accountId.Id}}</h3>
+  
+  <h3 class='text-muted'id='accountNum'>Account Balance: ${{this.accountId.Balance}}</h3>
+
+
+  
+  
+
+</div>
+
+<div class="container">
+
+  <button id='trBtn'type="button" class="btn btn-dark btn-large" (click)="getInfo()">Display Transactions</button>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+      <th scope="col">Transaction Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of this.infoArray">
+      <td>{{entry[0]}}</td>
+      <td>${{entry[1]}}</td>
+      <td>{{entry[2]}}</td>
+      <td>{{entry[3]}}</td>
+      <td>{{entry[4]}}</td>
+      <td>{{entry[5]}}</td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-dark btn-large btn-block nav-item nav-link-edit" [routerLink]="['/account']">Back</button>
+
+</div>

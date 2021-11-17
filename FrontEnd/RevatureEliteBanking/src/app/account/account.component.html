@@ -1,1 +1,88 @@
-<p>account works!</p>
+<nav class=nav-bar> <img id='revlogo' src='../../assets/revature-logo.png'>
+    <button class='logout' (click)='logout()'>Logout</button>
+</nav>
+<div class = 'contain'>
+<div class="card-container">
+    
+    <h3 id = title>Account Summary</h3>
+
+    <div>
+        <button class="new-account">Create New Account</button>
+        
+        <select [(ngModel)] = "type">
+            <option value="" disabled selected>Select Account Type</option>
+            <option>CHECKING</option>
+            <option>SAVINGS</option>
+        </select>
+        <input required pattern="[0-9]*[.][0-9][0-9]" type="number" placeholder="Initial Balance" min=0 required [(ngModel)] = "balance">
+        
+        <button class="submitBtn" (click)="submit()">submit</button>
+    </div>
+
+    <!--
+        Backend will send a List of Account objects, see account.component.ts; 
+        the ul element below will for-loop through the "accounts" list, and assign the vlaues to their appropriate spot.
+    -->
+    <ul>
+        <li *ngFor="let account of accounts"> 
+            <a class="card" target="_blank" rel="noopener" (click) = 'red(account.id, account.balance)'>
+                <span class="inside-content-left"> {{account.type}} <br> ####-00{{account.id}} </span>
+                <div >${{account.balance}} <br> Available Balance</div>   
+                <svg class="inside-content-right" class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a> 
+        </li>
+    </ul> 
+
+    <div class="container-element">
+        <button (click)='transDisp()'>Transfer Funds</button>
+        <div *ngIf="showTransfer">
+            <p>From:</p><input  type="number" placeholder="Account Id From" min=0 required [(ngModel)] = "from">
+            <p>To:</p><input type="number" placeholder="Account Id To" min=0 required [(ngModel)] = "to">
+            <p>Amount:</p><input  type="number" placeholder="Amount" min=0 required [(ngModel)] = "amount">
+            
+            <button (click)="transfer()">transfer</button>
+            <p>{{res}}</p>
+            <button (click)='transDisp()'>cancel</button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Misc
+
+    WITH GREAT POWER COMES GREAT RESPONSABILITY... 
+    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+
+      <ul>
+        <li *ngFor="let account of accounts">
+            {{account.type}} {{account.total}} {{account.four}}
+        </li>
+    </ul>
+
+    <form class="create-account" [formGroup]="form" (submit)="submit()">
+		<h1 class="h2 fw-normal mb-3 mt-3 text-center">Please register</h1>
+        <select>
+            <option value="" disabled selected>Select Account Type</option>
+            <option>CHECKINGS</option>
+            <option>SAVINGS</option>
+        </select>
+        <input formControlName="name" class="form-control"  placeholder="Name" required>
+    </form>
+
+    <select>
+        <option value="" disabled selected>Select Account Type</option>
+        <option>CHECKINGS</option>
+        <option>SAVINGS</option>
+    </select>
+    <input type="number" id="quantity" name="quantity" min="0" placeholder="Initial Balance">
+-->
