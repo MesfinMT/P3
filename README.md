@@ -13,7 +13,7 @@ A banking application that where users can sign up and track income, expenses, a
 * Spring Actuator
 * Spring DevTools
 * Angular 12
-* JUnit
+* JUnit 5
 * Log4j2
 * GCP Cloud SQL
 ## Features
@@ -31,7 +31,7 @@ To-do list:
 * Spring Tool Suite 4 or other Java IDE that can run a Spring project
 * Visual Studio Code or other IDE that can run an Angular application
 ## Getting Started
-* `git clone https://github.com/Revature-Elite-Banking/RevatureEliteBanking.git`
+* `git clone https://github.com/MesfinMT/P3.git`
 * `npm install` inside of ../RevatureEliteBanking/FrontEnd/RevatureEliteBanking
 * After the install use `ng serve -o` to start the Angular application
 * Import RevatureEliteBankingBackend as a Gradle project
