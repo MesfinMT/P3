@@ -12,7 +12,7 @@ A banking application that where users can sign up and track income, expenses, a
 * Spring Security
 * Spring Actuator
 * Spring DevTools
-* Angular 6
+* Angular 12
 * JUnit
 * Log4j2
 * GCP Cloud SQL
