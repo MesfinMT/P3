@@ -22,7 +22,7 @@ List of features ready and TODOs for future development
 * Users can create multiple bank accounts
 * Users can track expenses, income, and transfer money between accounts
 * Users receive notifications when a transaction has occurred or a transfer has been completed
-To-do list:
+## To-do list:
 * Users should be able to create and maintain a profile page that is visible to other users.
 * Users should be able to send and request money from someone else's account.
 * Users should be able to reset their password
